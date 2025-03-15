@@ -10,12 +10,12 @@ const auth = require('../middlewares/auth')({
   logger
 })
 
-router.post('/signup', users.postSignup)
 router.post('/login', users.postLogin)
+router.post('/signup', users.postSignup)
 router.get('/profile', auth, users.getProfile)
-router.get('/credit-package', auth, users.getCreditPackage)
 router.put('/profile', auth, users.putProfile)
 router.put('/password', auth, users.putPassword)
+router.get('/credit-package', auth, users.getCreditPackage)
 router.get('/courses', auth, users.getCourseBooking)
 
 module.exports = router

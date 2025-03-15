@@ -11,12 +11,13 @@ const auth = require('../middlewares/auth')({
   logger
 })
 
+router.post('/', creditPackage.post)
+
 router.get('/', creditPackage.getAll)
 
-router.post('/', creditPackage.post)
+router.delete('/:creditPackageId', creditPackage.deletePackage)
 
 router.post('/:creditPackageId', auth, creditPackage.postUserBuy)
 
-router.delete('/:creditPackageId', creditPackage.deletePackage)
 
 module.exports = router
